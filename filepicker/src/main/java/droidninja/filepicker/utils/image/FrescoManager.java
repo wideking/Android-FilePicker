@@ -8,7 +8,7 @@ import com.facebook.imagepipeline.core.ImagePipelineConfig;
 
 public class FrescoManager {
     public static void init(Context context){
-
+        context=context.getApplicationContext(); //need to use app context else ImagePipelineConfig will hold reference to the activity context!
         ImagePipelineConfig config = ImagePipelineConfig.newBuilder(context)
                 .setDownsampleEnabled(true)
                 .build();
